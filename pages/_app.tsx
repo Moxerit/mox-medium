@@ -1,10 +1,10 @@
-import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";
 import { SessionContextProvider } from "@supabase/auth-helpers-react";
 import { useState } from "react";
 import { NextUIProvider } from "@nextui-org/react";
 import { Box } from "../components/Box";
+import Navbar from "../components/NavbarComponent";
 
 function App({ Component, pageProps }: AppProps) {
   const [supabaseClient] = useState(() => createBrowserSupabaseClient());
@@ -12,7 +12,7 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <SessionContextProvider supabaseClient={supabaseClient}>
       <NextUIProvider>
-        {/* Navbar */}
+        <Navbar />
         <Box
           css={{
             px: "$12",
