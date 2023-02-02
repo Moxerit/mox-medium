@@ -31,14 +31,24 @@ const MainFeed: NextPage = () => {
     }
   };
 
+  /*
+        articles = [
+            article object 1,
+            article object 2
+        ]
+
+        <ArticleCard article={object} />
+    */
   return (
     <>
       <Text h2>Main Feed</Text>
       <Text size="$lg" css={{ my: "$8" }}>
         Check out articles from users here
       </Text>
+      {/* Article Card */}
       {articles.map((article) => (
-        <ArticleCard key={article} article={article} />
+        // eslint-disable-next-line react/jsx-key
+        <ArticleCard article={article} />
       ))}
     </>
   );
